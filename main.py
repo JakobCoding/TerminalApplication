@@ -1,4 +1,6 @@
-
+MAX_LINES = 3 #Global Constant - Slot Machine Terminal APP 
+MAX_BET = 100
+MIN_BET = 1
 
 #Functions
 def deposit(): #Deposit Function - Input - Loop(Bool) - Break  
