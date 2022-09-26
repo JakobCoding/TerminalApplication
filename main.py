@@ -1,9 +1,18 @@
+import random 
+
 MAX_LINES = 3 #Global Constant - Slot Machine Terminal APP 
 MAX_BET = 100
 MIN_BET = 1
 
 ROWS = 3
 COLS = 3
+
+symbol_count = {
+    "A": 2,
+    "B": 4,
+    "C": 6,
+    "D": 8
+}
 
 #Functions
 def deposit(): #Deposit Function - Input - Loop(Bool) - Break  
