@@ -26,7 +26,7 @@ def check_winnings(columns, lines, bet, values):
     winnings = 0 
     winning_lines = []
     for line in range(lines):
-        symbol = colums[0][line]
+        symbol = columns[0][line]
         for column in columns:
             symbol_to_check = column[line]
             if symbol != symbol_to_check:
@@ -135,7 +135,7 @@ def spin(balance):
     winnings, winning_lines = check_winnings(slots, lines, bet, symbol_value)
     print(f"You won ${winnings}.")
     print(f"You won on lines:", *winning_lines)
-    return winning_lines - total_bet
+    return winnings - total_bet
 
 def main():
     balance = deposit()
@@ -144,7 +144,7 @@ def main():
         answer = input("Press enter to play (q to quit).")
         if answer == "q":
             break
-        balance += spin()
+        balance += spin(balance)
 
     print(f"You left with ${balance}")
   
