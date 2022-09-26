@@ -1,6 +1,6 @@
-import random 
+import random #Import random python module - Allows program to select random symbols when called
 
-MAX_LINES = 3 #Global Constant - Slot Machine Terminal APP 
+MAX_LINES = 3 #Global Constants - Slot Machine Terminal APP 
 MAX_BET = 100
 MIN_BET = 1
 
@@ -13,6 +13,36 @@ symbol_count = {
     "C": 6,
     "D": 8
 }
+
+def get_slot_machine_spin(rows, cols, symbols):
+    all_symbols = []
+    for symbol, symbol_count in symbol.items():
+        for _ in range(symbol_count):
+            all_symbols.append(symbol)
+
+    colums = [] 
+    for _ in range(cols):
+        column = []
+        current_symbols = all_symbols[:]
+        for _ in range(rows):
+            value = random.choice(current_symbols)
+            current_symbols.remove(value)
+            colum.append(value)
+
+        colums.append(column)
+
+    return colums
+
+def print_slot_machine(colums):
+    for row in range(len(columns[0])):
+        for i, column in enumerate(columns):
+            if i != len(columns) - 1:
+                print(column[row], "|")
+            else:
+                print (column[row])
+
+
+
 
 #Functions
 def deposit(): #Deposit Function - Input - Loop(Bool) - Break  
@@ -58,11 +88,24 @@ def get_bet():
 
     return amount
 
+
 def main():
     balance = deposit()
     lines = get_number_of_lines()
-    bet = get_bet
-    print(balance, lines) 
+    while True:
+        bet = get_bet()
+        total_bet = bet * lines
+
+        if total_bet > balance:
+            print(
+                f"You do not have enough to bet that amount, your current balance is: ${balance}")
+        else:
+            break    
+
+    print(
+        f"You are betting ${bet} on {lines} lines. Total bet is equal to: ${total_bet}")
+
+
     
 main()
 
