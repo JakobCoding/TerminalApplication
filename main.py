@@ -115,7 +115,7 @@ def get_bet():
 
 
 
-def spin():
+def spin(balance):
     lines = get_number_of_lines()
     while True:
         bet = get_bet()
