@@ -2,6 +2,9 @@ MAX_LINES = 3 #Global Constant - Slot Machine Terminal APP
 MAX_BET = 100
 MIN_BET = 1
 
+ROWS = 3
+COLS = 3
+
 #Functions
 def deposit(): #Deposit Function - Input - Loop(Bool) - Break  
     while True:
@@ -53,3 +56,4 @@ def main():
     print(balance, lines) 
     
 main()
+
