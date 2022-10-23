@@ -8,17 +8,17 @@ ROWS = 3 #specifies number of rows and colums in the slot machine
 COLS = 3
 
 symbol_count = {  #specifies amount of symbols and values / these are provided in a dictionary {} 
-    "A": 2, # A = Most valuable 
+    "A": 2, # A = Most valuable with only 2 A's in the column 
     "B": 4,
     "C": 6,
-    "D": 8  # D = Least valuable 
+    "D": 8  # D = Least valuable with 8 D's in the column 
 }
-
+#Not a very balanced slot machine Just trying to make something that works
 symbol_value = {
-    "A": 5,
+    "A": 5,   #symbol values self explanitory A = 5 
     "B": 4,
     "C": 3,
-    "D": 2
+    "D": 2    #symbol values D = 2 
 }
 
 
@@ -37,20 +37,20 @@ def check_winnings(columns, lines, bet, values):
 
     return winnings, winning_lines
 
-def get_slot_machine_spin(rows, cols, symbols):
-    all_symbols = []
-    for symbol, symbol_count in symbols.items():
-        for _ in range(symbol_count):
-            all_symbols.append(symbol)
+def get_slot_machine_spin(rows, cols, symbols): #three parameters that are passed to this function 
+    all_symbols = [] #create list to contain all the symbols that could possibly randomly choose from 
+    for symbol, symbol_count in symbols.items(): #for loop which adds how ever many symbols we have above into the all_symbols list
+        for _ in range(symbol_count):            #.items gives the key and the value associated with a dictionary  
+            all_symbols.append(symbol) 
 
-    columns = [] 
-    for _ in range(cols):
+    columns = [] #define column list
+    for _ in range(cols): #generate a column for every column we have in this case 3 columns 
         column = []
-        current_symbols = all_symbols[:]
-        for _ in range(rows):
-            value = random.choice(current_symbols)
-            current_symbols.remove(value)
-            column.append(value)
+        current_symbols = all_symbols[:] # [:] = copy of a list and all symbols  
+        for _ in range(rows): #loop through the number of values that need to be generated that is equal to the number of rows in the slot machine,
+            value = random.choice(current_symbols) # random choice from imported random module 
+            current_symbols.remove(value) #removing symbols from list as to not get repeated results in slot machine spins per game 
+            column.append(value) #
 
         columns.append(column)
 
