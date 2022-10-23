@@ -69,16 +69,16 @@ def print_slot_machine(columns):
 
 
 def deposit(): #(Deposit Function) Collects User Input - 
-    while True:
-        amount = input("What would you like to deposit? $") 
-        if amount.isdigit(): 
-            amount = int(amount)
-            if amount > 0:
-                break
+    while True: # continually ask the user for a deposit amount until they provide a valid amount
+        amount = input("What would you like to deposit? $") #request user input
+        if amount.isdigit(): # isdigit string method checks if the input is a valid whole number 
+            amount = int(amount) # converts above string input to numeric value
+            if amount > 0: # checks if the number is greater than zero
+                break # if number is greater than zero break out of while loop 
             else:
-                print("Amount must be greater that 0.")
+                print("Amount must be greater that 0.") #error handling if user input is not greater than zero 
         else: 
-            print("Please enter a number.") 
+            print("Please enter a number.") # error handling is user input is not a number 
 
     return amount
 
