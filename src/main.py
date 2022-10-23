@@ -1,17 +1,17 @@
-import random #Import random python module - Allows program to select random symbols when called
+import random #Import (random) python module - Allows program to select random symbols when called
 
-MAX_LINES = 3 #Global Constants 
+MAX_LINES = 3 #Python Global Constants 
 MAX_BET = 100
 MIN_BET = 1
 
-ROWS = 3
+ROWS = 3 #specifies number of rows and colums in the slot machine
 COLS = 3
 
-symbol_count = {
-    "A": 2,
+symbol_count = {  #specifies amount of symbols and values / these are provided in a dictionary {} 
+    "A": 2, # A = Most valuable 
     "B": 4,
     "C": 6,
-    "D": 8
+    "D": 8  # D = Least valuable 
 }
 
 symbol_value = {
@@ -69,18 +69,18 @@ def print_slot_machine(columns):
 
 
 def deposit(): #(Deposit Function) Collects User Input - 
-    while True: # continually ask the user for a deposit amount until they provide a valid amount
+    while True: #While loop continually asks the user for a deposit amount until they provide a valid amount
         amount = input("What would you like to deposit? $") #request user input
-        if amount.isdigit(): # isdigit string method checks if the input is a valid whole number 
-            amount = int(amount) # converts above string input to numeric value
-            if amount > 0: # checks if the number is greater than zero
-                break # if number is greater than zero break out of while loop 
+        if amount.isdigit(): #isdigit string method checks if the input is a valid whole number 
+            amount = int(amount) #converts above string input to numeric value
+            if amount > 0: #checks if the number is greater than zero
+                break #if number is greater than zero break out of while loop 
             else:
                 print("Amount must be greater that 0.") #error handling if user input is not greater than zero 
         else: 
-            print("Please enter a number.") # error handling is user input is not a number 
+            print("Please enter a number.") #error handling is user input is not a number 
 
-    return amount
+    return amount 
 
 
 def get_number_of_lines(): 
@@ -89,8 +89,8 @@ def get_number_of_lines():
             "Enter the number of lines you would like to bet on (1-" + str(MAX_LINES) + ")? ")
         if lines.isdigit(): 
             lines = int(lines)
-            if 1 <= lines <= MAX_LINES:
-                break
+            if 1 <= lines <= MAX_LINES: #check if value is inbetween two values 
+                break 
             else:
                 print("Enter a valid number of lines.")
         else: 
@@ -107,7 +107,7 @@ def get_bet():
             if MIN_BET <= amount <= MAX_BET: 
                 break
             else:
-                print(f"Amount must be between ${MIN_BET} - ${MAX_BET}.")
+                print(f"Amount must be between ${MIN_BET} - ${MAX_BET}.") #f string allows variables to be inserted inside of a string
         else: 
             print("Please enter a number.") 
 
