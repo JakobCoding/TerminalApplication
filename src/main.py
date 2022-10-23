@@ -1,6 +1,6 @@
 import random #Import random python module - Allows program to select random symbols when called
 
-MAX_LINES = 3 #Global Constants - Slot Machine Terminal APP 
+MAX_LINES = 3 #Global Constants 
 MAX_BET = 100
 MIN_BET = 1
 
@@ -68,9 +68,9 @@ def print_slot_machine(columns):
 
 
 
-def deposit(): #Deposit Function - Input - Loop(Bool) - Break  
+def deposit(): #(Deposit Function) Collects User Input - 
     while True:
-        amount = input("What would you like to deposit? $")
+        amount = input("What would you like to deposit? $") 
         if amount.isdigit(): 
             amount = int(amount)
             if amount > 0:
