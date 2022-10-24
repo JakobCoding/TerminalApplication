@@ -60,11 +60,12 @@ def print_slot_machine(columns): #transposing columns so they display correctly 
     for row in range(len(columns[0])): 
         for i, column in enumerate(columns):
             if i != len(columns) - 1: #maximum index we have to access an element in the columns list is 2
-                print(column[row], end=" | ") #pipe operater provides some seperation between results 
-            else:
+                print(column[row], end=" | ") #end= will provide a pipe operater provides some seperation between results 
+            else:                             #by default end is equal to the \n (new line character)
                 print (column[row], end="")
 
-        print()
+        print() #Empty print statement brings us down to the next line as it prints a new line character by default at the/ continue below,
+                #End of the empty print statement, This allows the slot machine to be displayed on the terminal properly 
 
 
 
@@ -130,7 +131,7 @@ def spin(balance):
     print(
         f"You are betting ${bet} on {lines} lines. Total bet is equal to: ${total_bet}")
 
-    slots = get_slot_machine_spin(ROWS, COLS, symbol_count)  
+    slots = get_slot_machine_spin(ROWS, COLS, symbol_count) #Tuple 
     print_slot_machine(slots)
     winnings, winning_lines = check_winnings(slots, lines, bet, symbol_value)
     print(f"You won ${winnings}.")
