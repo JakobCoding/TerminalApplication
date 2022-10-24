@@ -13,9 +13,9 @@ symbol_count = {  #specifies amount of symbols and values / these are provided i
     "C": 6,
     "D": 8  # D = Least valuable with 8 D's in the column 
 }
-#Not a very balanced slot machine Just trying to make something that works
+#Not a very balanced or Fair slot machine Just trying to make something that works
 symbol_value = {
-    "A": 5,   #symbol values self explanitory A = 5 
+    "A": 5,   #symbol values A = 5 
     "B": 4,
     "C": 3,
     "D": 2    #symbol values D = 2 
