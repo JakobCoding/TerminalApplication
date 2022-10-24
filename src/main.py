@@ -50,17 +50,17 @@ def get_slot_machine_spin(rows, cols, symbols): #three parameters that are passe
         for _ in range(rows): #loop through the number of values that need to be generated that is equal to the number of rows in the slot machine,
             value = random.choice(current_symbols) # random choice from imported random module 
             current_symbols.remove(value) #removing symbols from list as to not get repeated results in slot machine spins per game 
-            column.append(value) #
+            column.append(value) #add value to column list 
 
         columns.append(column)
 
     return columns
 
-def print_slot_machine(columns):
-    for row in range(len(columns[0])):
+def print_slot_machine(columns): #transposing columns so they display correctly upright on the screen instead of left to right like a row 
+    for row in range(len(columns[0])): 
         for i, column in enumerate(columns):
-            if i != len(columns) - 1:
-                print(column[row], end=" | ")
+            if i != len(columns) - 1: #maximum index we have to access an element in the columns list is 2
+                print(column[row], end=" | ") #pipe operater provides some seperation between results 
             else:
                 print (column[row], end="")
 
